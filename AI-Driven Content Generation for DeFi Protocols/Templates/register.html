@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DeFi Content Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">DeFi Content</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center mb-4 animate__animated animate__fadeIn">Welcome to DeFi Content Generator</h1>
+        <form method="POST" class="card p-4 shadow-lg mx-auto needs-validation" style="max-width: 500px;" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="username" name="username" required 
+                       data-bs-toggle="tooltip" title="Enter a unique username" pattern="[a-zA-Z0-9]{3,}">
+                <div class="invalid-feedback">Please enter a username (3+ alphanumeric characters).</div>
+            </div>
+            <div class="mb-3">
+                <label for="experience_level" class="form-label">Experience Level <span class="text-danger">*</span></label>
+                <select class="form-select" id="experience_level" name="experience_level" required 
+                        data-bs-toggle="tooltip" title="Select your DeFi knowledge level">
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <div class="invalid-feedback">Please select an experience level.</div>
+            </div>
+            <div class="mb-3">
+                <label for="interests" class="form-label">Interests <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="interests" name="interests" required 
+                       data-bs-toggle="tooltip" title="Enter interests (e.g., yield farming, staking)" 
+                       placeholder="e.g., yield farming, staking">
+                <div class="invalid-feedback">Please enter your interests.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
